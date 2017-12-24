@@ -39,14 +39,17 @@
  
  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Category<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="userProduct1">Soaps</a></li>
+          <li><a href="userHome">Soaps</a></li>
           <li><a href="userProduct">Shampoos</a></li>
           <li><a href="userProduct">Detergents</a></li>
-          <li><a href="userProduct">Spices</a></li>          
+          <li><a href="userProduct">Spices</a></li>  
+          <c:forEach var="category" items="${catList}">
+	<li><a href="${pageContext.request.contextPath}/productCustList?catId=${category.catId}">${category.catName}</a>
+	</c:forEach>        
         </ul>
       </li>  
       
-      <li><a href="${pageContext.request.contextPath}/goToCart">Cart</a></li>
+      <li><a href="cart">Cart</a></li>
  
 </ul> 
     <ul class="nav navbar-nav navbar-right">
